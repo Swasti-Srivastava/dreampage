@@ -1,0 +1,111 @@
+/* CSS file for styling DreamPages */
+
+@font-face {
+    font-family: 'Themystory';
+    src: url('Themystory.ttf') format('truetype'); /* Adjust the path as needed if your font file is in a different directory */
+}
+
+body {
+    font-family: 'Themystory', Arial, sans-serif; /* Sets the custom font with Arial as fallback */
+    background-color: #D0BFAB; /* Sets the background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+header {
+    text-align: center; /* Centers the text inside the header */
+    position: absolute;
+    top: 20px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 4em; /* Increased the size of the heading */
+}
+
+hr {
+    margin-top: 10px; /* Adds space between the heading and the line */
+    border: 0; /* Removes default border */
+    height: 2px; /* Sets the height of the line */
+    background-color: #2d2d2d; /* Color of the line */
+}
+
+.content {
+    text-align: center;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 5em; /* Larger text for the main phrase */
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 3em; /* Slightly smaller text for the descriptive phrase */
+    margin-bottom: 1em;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+    background-color: #B18F7C; /* Green background */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6a564a; /* Slightly darker green on hover */
+}
+
+
+
+.cursor {
+    font-weight: 100;
+    font-size: 2.5em; /* Adjust size accordingly */
+    color: black; /* Cursor color */
+    animation: blink 0.7s steps(2, start) infinite;
+    -webkit-animation: blink 0.7s steps(2, start) infinite;
+    -moz-animation: blink 0.7s steps(2, start) infinite;
+    -ms-animation: blink 0.7s steps(2, start) infinite;
+    -o-animation: blink 0.7s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to { visibility: hidden; }
+}
+@-webkit-keyframes blink {
+    to { visibility: hidden; }
+}
+@-moz-keyframes blink {
+    to { visibility: hidden; }
+}
+@-ms-keyframes blink {
+    to { visibility: hidden; }
+}
+@-o-keyframes blink {
+    to { visibility: hidden; }
+}
+
+
+.top-left-image {
+    position: absolute;
+    top: 100px; /* Adjust based on the header height */
+    left: 20px; /* Distance from the left side */
+    width: 340px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    transform: rotate(80deg); /* Rotates the image 20 degrees clockwise */
+}
+
+.bottom-right-image {
+    position: absolute;
+    bottom: .2px; /* Adjust this value to increase/decrease distance from the bottom edge */
+    right: 10px; /* Adjust this value to increase/decrease distance from the right edge */
+    width: 370px; /* Adjust the width as needed */
+    height: auto; /* This ensures the aspect ratio is maintained */
+}
+

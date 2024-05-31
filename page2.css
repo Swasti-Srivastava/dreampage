@@ -1,0 +1,67 @@
+/* Define custom fonts */
+@font-face {
+    font-family: 'Themystory';
+    src: url('Themystory.ttf') format('truetype'); /* Adjust the path as needed */
+}
+
+@font-face {
+    font-family: 'CherryToday'; 
+    src: url('CherryTodayDemoRegular.ttf') format('truetype'); /* Adjust the path as needed */
+}
+
+/* Base styles from the original page */
+body {
+    font-family: 'CherryToday', Arial, sans-serif; /* Default font for the body text */
+    background-color: #D0BFAB;
+    color: #333; /* Assuming the original text color */
+}
+
+header h1 {
+    font-family: 'Themystory', Arial, sans-serif; /* Specific font for the title */
+    text-align: center;
+    font-size: 3em;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: #2d2d2d;
+    
+}
+
+/* New layout styles for start.html */
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section .text, .section .image {
+    flex: 1;
+    padding: 20px;
+}
+
+.section:nth-child(odd) .text {
+    order: 1;
+}
+
+.section:nth-child(odd) .image {
+    order: 2;
+}
+
+.section:nth-child(even) .image {
+    order: 1;
+}
+
+.section:nth-child(even) .text {
+    order: 2;
+}
+
+img {
+    width: 300px; /* Set a fixed width for all images */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Ensures the image doesn't have extra space below (inline-block default behavior) */
+    margin: 0 auto; /* Centers the image if the container is wider */
+}
+

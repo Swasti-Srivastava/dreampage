@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamPages</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your external CSS file -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var typedTextSpan = document.querySelector(".typed-text");
+            var cursorSpan = document.querySelector(".cursor");
+
+            const textArray = ["For book lovers only!"];
+            const typingDelay = 200;
+            const erasingDelay = 100;
+            const newTextDelay = 2000; // Delay between current and next text
+            let textArrayIndex = 0;
+            let charIndex = 0;
+
+            function type() {
+                if (charIndex < textArray[textArrayIndex].length) {
+                    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingDelay);
+                } 
+                else {
+                    cursorSpan.classList.remove("typing");
+                    setTimeout(erase, newTextDelay);
+                }
+            }
+
+            function erase() {
+                if (charIndex > 0) {
+                    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+                    charIndex--;
+                    setTimeout(erase, erasingDelay);
+                } 
+                else {
+                    cursorSpan.classList.remove("typing");
+                    textArrayIndex++;
+                    if(textArrayIndex >= textArray.length) textArrayIndex = 0;
+                    setTimeout(type, typingDelay + 1100);
+                }
+            }
+
+            if (textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>DreamPages</h1> <!-- This is the heading text -->
+        <hr> <!-- This is the horizontal line -->
+    </header>
+
+    <!-- Adding the top left image under the header -->
+    <img src="kolorowanka-kwiatek-lilia-duzo-kiatow-na-lodydze-1.png" alt="Descriptive Text" class="top-left-image">
+    <!-- Other content above... -->
+
+
+    <!-- Main content area for centered text and button -->
+    <div class="content">
+        <div class="text-and-button">
+            <h2><span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+            <p>Add books, specify ratings per genre, and add posters</p>
+            <button onclick="window.location.href='page2.html';">Get Started</button>
+        </div>
+    </div>
+
+    <!-- Image in the bottom right -->
+    <img src="book_main_page_pic.jpeg" alt="Descriptive Text" class="bottom-right-image">
+
+
+    <!-- Image in the top left -->
+    <!--  <img src="book_main_page_pic.jpeg" alt=" " class="top-left-image">-->
+
+    <!-- Image in the bottom right -->
+   <!-- <img src="/Users/swastisrivastava/Desktop/Personal Projects/UI:UX/Dreampages/kolorowanka-kwiatek-lilia-duzo-kiatow-na-lodydze-1.png" alt=" " class="bottom-right-image">-->
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* Base styles */
+body, h1, p {
+    font-family: 'Themystory', Arial, sans-serif;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: #2d2d2d;
+}
+
+/* Content styles */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;  /* Ensures the content area is visibly centered */
+}
+
+#book-display {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#book-display img {
+    max-width: 100%;  /* Ensures the image fits within the viewport */
+    height: auto;
+}
+
+#book-display p {
+    font-size: 1.5em;
+    color: #666;
+}
